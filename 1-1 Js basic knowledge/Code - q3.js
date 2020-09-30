@@ -48,4 +48,4 @@ console.log(safeProp("name", user).map((x) => ex3(x)));
 const ex4 = function (n) {
   return Maybe.of(n).map(x => fp.parseInt(10, x));
 };
-console.log(ex4(undefined));
+console.log(ex4(undefined)); //for test
