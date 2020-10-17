@@ -69,11 +69,13 @@ const averageDollarValue = fp.flowRight(
 console.log(averageDollarValue(cars));
 
 /*
-  #2 - 3
+  #2 - 4
 */
 
 const _udnerscore = fp.replace(/\W+/g, "_");
 
-const sanitizeNames = fp.flowRight(fp.map(fp.flowRight(_udnerscore, fp.toLower)));
+const sanitizeNames = fp.map(
+  fp.flowRight(_udnerscore, fp.toLower, fp.prop("name"))
+);
 
-console.log(sanitizeNames(["Hello World"]));
+console.log(sanitizeNames(cars));
