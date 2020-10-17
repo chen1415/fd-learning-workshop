@@ -79,3 +79,11 @@ const sanitizeNames = fp.map(
 );
 
 console.log(sanitizeNames(cars));
+
+//maintain the original structure
+const newSanitizeNames = fp.map((car) => {
+  car.name = fp.flowRight(_udnerscore, fp.toLower)(car.name);
+  return car;
+});
+
+console.log(newSanitizeNames(cars));
